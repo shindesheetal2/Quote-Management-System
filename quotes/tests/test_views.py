@@ -147,7 +147,7 @@ class UpdateQuoteTest(TestCase):
                               content_type='application/json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_invalid_update_puppy(self):
+    def test_invalid_update_quote(self):
         """Testcase for updating invalid quote"""
         response = client.put(reverse('updateQuote', kwargs={'pk': self.quote1.pk}),
                               data=json.dumps(self.invalid_payload),
@@ -155,7 +155,7 @@ class UpdateQuoteTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         
 
-class DeleteSinglePuppyTest(TestCase):
+class DeleteSingleQuotesTest(TestCase):
     """Testcase for deleting quote"""
 
     def setUp(self):
