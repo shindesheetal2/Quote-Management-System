@@ -1,0 +1,63 @@
+Project Name: Quote Management System (QMS)
+
+Project Structure:
+
+The Quote Management System project follows the standard structure of a Django project. Here's an overview of the project structure - 
+
+QMS/                           # Root directory of the Django project
+│
+├── quotes/                    # Django app for managing quotes
+│   ├── migrations/            # Database migrations
+│   ├── models.py              # Definition of database models (e.g., Quote, Author)
+│   ├── serializers.py         # Serializers for converting models to/from JSON
+│   ├── views.py               # API views for handling HTTP requests
+│   ├── admin.py               # Configuration for Django admin interface
+│   └── tests/                 # Package for unit tests
+│       ├── __init__.py        # Initialization file for the tests package
+│       ├── test_model.py      # Unit tests for testing models
+│       └── test_views.py      # Unit tests for testing views
+│
+├── QMS/                       # Main project directory
+│   ├── settings.py            # Django project settings
+│   ├── urls.py                # URL configuration for the project
+│   └── wsgi.py                # WSGI application entry point
+│
+├── manage.py                  # Django management script
+└── README.md                  # Project documentation
+
+
+
+API Endpoints:
+
+The Quote Management System provides the following API endpoints - 
+
+/api/listQuotes/: GET - Retrieve a list of all quotes.
+/api/getSingleQuote/<int:pk>: GET - Retrieve a specific quote by its ID.
+/api/createQuote/: POST - Create a new quote.
+/api/updateQuote/<int:pk>: PUT/PATCH - Update an existing quote by its ID.
+/api/deleteQuote/<int:pk>: DELETE - Delete a quote by its ID.
+
+
+Database Schema:
+
+The database schema for the Quote Management System includes the following models -
+
+Author: Represents an author of a quote, with fields for name and date of birth.
+Quote: Represents a quote, with fields for text, source, creation date, and a foreign key relationship with Author.
+
+Utilized SQLite as the database backend. Database name - `QMS.sqlite3`
+
+
+Important Design Decisions:
+
+Token-Based Authentication:
+     Implemented token-based authentication using Django REST Framework's JWT authentication to secure API endpoints and restrict access to authenticated users.
+
+CRUD Operations: 
+    Designed API endpoints to support CRUD (Create, Read, Update, Delete) operations on quotes, providing users with full management capabilities.
+
+SQLite Database: 
+    Utilized SQLite as the database backend for simplicity and ease of development, suitable for small to medium-sized applications.
+
+Test-Driven Development: 
+    Followed a test-driven development approach by writing unit tests for API endpoints and models to ensure reliability and maintainability of the codebase.
