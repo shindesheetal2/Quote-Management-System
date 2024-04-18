@@ -14,7 +14,7 @@ To run the Quote Management System project locally, follow these steps:
 
 1. Clone the repository:
 
-   git clone https://github.com/sheetalshinde88/Quote-Management-System.git
+   git clone https://github.com/shindesheetal2/Quote-Management-System.git
    cd QMS
 
 2. Create a virtual environment:
